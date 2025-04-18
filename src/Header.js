@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu'; // 메뉴 아이콘
-import NotificationsIcon from '@mui/icons-material/Notifications'; // 알림 아이콘
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // 계정 아이콘
+// AppBar 관련 import 제거
+// import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');  // 검색어 상태 관리
@@ -17,7 +18,7 @@ function Header() {
       {/* 상단 검색창 + 버튼 */}
       <div style={{
         position: 'absolute',
-        top: '80px',  // 상단바 아래로 배치 (상단바 높이를 고려하여 80px 설정)
+        top: '20px',  // 상단바가 없으므로 위치 조정 (80px에서 20px로 변경)
         left: '50%',
         transform: 'translateX(-50%)',
         display: 'flex',  // 검색창과 버튼을 가로로 배치
@@ -63,30 +64,8 @@ function Header() {
         </button>
       </div>
 
-      {/* 상단바 컴포넌트 */}
-      <AppBar position="sticky">
-        <Toolbar>
-          {/* 메뉴 아이콘 */}
-          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton>
-
-          {/* 앱 이름 */}
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            전공
-          </Typography>
-
-          {/* 알림 아이콘 */}
-          <IconButton color="inherit">
-            <NotificationsIcon />
-          </IconButton>
-
-          {/* 계정 아이콘 */}
-          <IconButton color="inherit">
-            <AccountCircleIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      {/* 상단바 컴포넌트 제거 */}
+      {/* AppBar 부분을 완전히 제거 */}
     </div>
   );
 }
